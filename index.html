@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>word counter</title>
+    <style>
+        body {
+            background-color: #333;
+            font-family: sans-serif;
+            color: #fff;
+            margin: 12px;
+            overflow: hidden;
+        }
+
+        #words {
+            position: absolute;
+            background-color: #444;
+            color: #fff;
+            top: 36px;
+            resize: none;
+            bottom: 8px;
+            left: 8px;
+            right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="info">Words: 0, Characters: 0</div>
+    <textarea id="words"></textarea>
+    <script>
+        const text = document.getElementById("words");
+        const info = document.getElementById("info");
+
+        text.addEventListener("input", () => {
+            const characters = text.value.length;
+            let wordCount = 0;
+            const words = text.value.trim().split(/\s+/);
+            words.forEach(element => {
+                if (element.length != 0) wordCount++;
+            });
+            info.innerHTML = `Words: ${wordCount}, Characters: ${characters}`
+        })
+    </script>
+</body>
+
+</html>
