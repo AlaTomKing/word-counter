@@ -1,2 +1,2 @@
 # word-counter
-legit just counts words and saves them
+legit just counts words
